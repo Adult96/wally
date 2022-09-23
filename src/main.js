@@ -2,10 +2,8 @@
 import PopUp from './popup.js';
 import { GameBuilder, Reason } from './game.js';
 import { LevelSelect } from './level.js';
-import PcAndMobile from './pcAndMobile.js';
 import * as sound from './sound.js';
 
-PcAndMobile();
 const selectLevel = document.querySelector('.level');
 const level = new LevelSelect();
 

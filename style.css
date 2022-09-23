@@ -11,10 +11,10 @@ html,
 body {
   width: 100%;
   height: 100%;
-  /* display: flex;
+  display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center; */
+  align-items: center;
   background-color: black;
   margin: 0;
   overflow: hidden;
@@ -162,12 +162,15 @@ ul {
   background-color: darkorange;
 }
 
+.level {
+  text-align: center;
+}
+
 .game__field {
   position: absolute;
   top: 15rem;
   width: 100vw;
   height: 40rem;
-  background-color: antiquewhite;
 }
 
 .carrot {
@@ -217,37 +220,65 @@ ul {
   font-size: 50px;
 }
 
+@media screen and (max-width: 1280px) {
+  .carrot {
+    width: 3.5rem;
+  }
+}
+
 @media screen and (max-width: 780px) {
-  .game[data-touchable='true'] {
-    transform: rotate(90deg);
-    position: relative;
-    height: 100vw;
-    width: 100vh;
-    top: 0%;
-    left: 100%;
-    transform-origin: top left;
-    background: url(img/where_s_wally.jpeg) no-repeat center/cover;
+  .game__header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
   }
 
-  .game:not([data-touchable='true']) {
+  .game__button {
+    font-size: 2rem;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 10px;
   }
 
-  .game__field[data-touchable='true'] {
-    width: 100vh;
-    height: 30rem;
-    background-color: antiquewhite;
+  .game__timer {
+    font-size: 2rem;
+    width: 5rem;
+    height: 3rem;
   }
 
-  .game__field:not([data-touchable='true']) {
+  .game__score {
+    font-size: 2rem;
+    line-height: 3rem;
+    width: 3rem;
+    height: 3rem;
   }
 
-  .pop-up[data-touchable='true'] {
-    transform: rotate(90deg);
-    top: 35%;
-    left: 50%;
-    transform-origin: top left;
+  .game__field {
+    top: 25vh;
+    width: 100vw;
+    height: 70%;
   }
 
-  .pop-up:not([data-touchable='true']) {
+  .game__level {
+    width: 20rem;
+    border: 1px solid black;
+    border-radius: 0.5rem;
+    background-color: rgb(255, 255, 255, 0.8);
+    z-index: 100;
+  }
+
+  .pop-up {
+    transform: translateY(-200%);
+  }
+
+  .carrot {
+    width: 3rem;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .carrot {
+    width: 2.5rem;
   }
 }
