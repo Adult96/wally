@@ -4,8 +4,12 @@ export class LevelSelect {
   constructor() {
     this.select = document.querySelector('.level');
     this.select.addEventListener('click', (e) => {
-      e.target.style.background = 'darkorange';
-      this.selectd(e.target.innerText);
+      if (e.target.nodeName === 'UL') {
+        return;
+      } else {
+        e.target.style.background = 'darkorange';
+        this.selectd(e.target.innerText);
+      }
     });
   }
 

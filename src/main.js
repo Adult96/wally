@@ -2,15 +2,23 @@
 import PopUp from './popup.js';
 import { GameBuilder, Reason } from './game.js';
 import { LevelSelect } from './level.js';
+import PcAndMobile from './pcAndMobile.js';
 import * as sound from './sound.js';
 
+PcAndMobile();
 const selectLevel = document.querySelector('.level');
 const level = new LevelSelect();
 
 selectLevel.addEventListener('click', (e) => {
   const text = e.target.innerText;
   const setLevel = level.selectd(text);
+  if (e.target.nodeName === 'UL') {
+    return;
+  }
+  main(setLevel);
+});
 
+const main = (setLevel) => {
   const game = new GameBuilder()
     .gameDuration(setLevel[0]) //
     .CarrotCnt(setLevel[1]) //
@@ -42,4 +50,4 @@ selectLevel.addEventListener('click', (e) => {
   gameFinishBanner.setClickListener(() => {
     game.start();
   });
-});
+};
